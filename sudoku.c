@@ -73,7 +73,7 @@ int verificarFilasColumnas(Node* n){
 int subMatriz(Node* n){
    int k, p;
    for(k = 0; k < 9; k++){
-      int a[9] = {0}:
+      int a[9] = {0};
       for(p = 0; p < 9; p++){
          int i = 3*(k/3) + (p/3);
          int j = 3*(k%3) + (p%3);
