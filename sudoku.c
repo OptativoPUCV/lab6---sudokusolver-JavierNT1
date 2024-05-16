@@ -70,8 +70,30 @@ int verificarFilasColumnas(Node* n){
    return 1;
 }
 
+int subMatriz(Node* n){
+   int k, p;
+   for(k = 0; k < 9; k++){
+      int a[9] = {0}:
+      for(p = 0; p < 9; p++){
+         int i = 3*(k/3) + (p/3);
+         int j = 3*(k%3) + (p%3);
+         if(n->sudo[i][j] != 0){
+            if(a[(n->sudo[i][j] - 1)] == 0){
+               a[(n->sudo[i][j]) - 1] = 1; 
+            }
+            else
+               return 0;
+         }
+      }
+   }
+   return 1;
+}
+
+
 int is_valid(Node* n){
    if(verificarFilasColumnas(n) == 1)
+      return 1;
+   else if (subMatriz(n) == 1)
       return 1;
    else
       return 0;

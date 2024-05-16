@@ -54,3 +54,22 @@ Thu 16 May 2024 08:18:32 PM UTC:
  tests:  5|3
 total_score: 35/70
 7efa64f
+Thu 16 May 2024 08:24:32 PM UTC: 
+ sudoku.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘subMatriz’:
+sudoku.c:76:21: error: expected ‘,’ or ‘;’ before ‘:’ token
+   76 |       int a[9] = {0}:
+      |                     ^
+sudoku.c:77:20: error: statement with no effect [-Werror=unused-value]
+   77 |       for(p = 0; p < 9; p++){
+      |                  ~~^~~
+sudoku.c:77:28: error: expected ‘;’ before ‘)’ token
+   77 |       for(p = 0; p < 9; p++){
+      |                            ^
+      |                            ;
+sudoku.c:77:28: error: expected statement before ‘)’ token
+cc1: all warnings being treated as errors
+Compilation failed
+1ffba55
