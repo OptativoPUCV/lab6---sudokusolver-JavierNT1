@@ -43,15 +43,48 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n){
-
-    return 1;
+int verificarFilasColumnas(Node* n){
+   int i, j;
+   for(i = 0; i < 9; i++){
+      int a[9] = {0};
+      int b[9] = {0};
+      for(j = 0; j < 9; j++){
+         if(n->sudo[i][j] != 0){
+            if(a[n->sudo[i][j] - 1] == 0){
+               a[n->sudo[i][j] - 1] = 1;
+            }
+            else{
+               return 0;
+            }
+         }
+         if(n->sudo[j][i] != 0){
+            if(b[n->sudo[j][i] - 1] == 0){
+               b[n->sudo[j][i] - 1] = 1;
+            }
+            else{
+               return 0;
+            }
+         }
+      }
+   }
+   return 1;
 }
 
+int is_valid(Node* n){
+   if(verificarFilasColumnas(n) == 1)
+      return 1;
+   else
+      return 0;
+}
 
 List* get_adj_nodes(Node* n){
-    List* list=createList();
-    return list;
+   List* list=createList();
+   for(int i = 0; i < 9 ; i++){
+      for(int j = 0; j < 9; j++){
+         
+      }
+   }
+   return list;
 }
 
 
