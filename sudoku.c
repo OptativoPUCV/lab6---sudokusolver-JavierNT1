@@ -89,14 +89,13 @@ int subMatriz(Node* n){
    return 1;
 }
 
-
 int is_valid(Node* n){
-   if(verificarFilasColumnas(n) == 1)
-      return 1;
-   else if (subMatriz(n) == 1)
-      return 1;
-   else
-      return 0;
+   if(verificarFilasColumnas(n) == 1){
+      if (subMatriz(n) == 1)
+         return 1;
+      else
+         return 0;
+      }
 }
 
 List* get_adj_nodes(Node* n){
