@@ -90,7 +90,7 @@ int subMatriz(Node* n){
 }
 
 int is_valid(Node* n){
-   if(verificarFilasColumnas(n) == 1){
+   if(verificarFilasColumnas(n) == 1)
       if (subMatriz(n) == 1)
          return 1;
       
