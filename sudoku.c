@@ -130,8 +130,29 @@ int is_final(Node* n){
    return 1;
 }
 
+void insert(List* lista, Stack* P){
+   Node* aux = first(lista);
+   while(aux != NULL){
+      push(P, aux);
+      aux = next(lista);
+   }
+}
+
 Node* DFS(Node* initial, int* cont){
-  return NULL;
+   Stack* pila = createStack();
+   push(pila, initial);
+   Node* aux = createNode();
+   while(top(pila) != NULL){
+      aux = top(pila);
+      pop(pila);
+      if(is_final(aux)) return aux;
+      else{
+         cont++;
+         List* lista = get_adj_nodes(aux);
+         insert(lista, pila);
+      }
+   }
+   return NULL;
 }
 
 /*
